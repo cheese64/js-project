@@ -4,25 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Class List</title>
+    <style>
+        table {border-collapse: collapse;}
+        tr:nth-child(even) {background-color: #f2f2f2;}
+        th {
+            background-color: #FFCC00;
+            color: #57150B;
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
     <table class="table">
     <thead>
         <tr>
-            <th scope="col">CRN</th>
-            <th scope="col">School</th>
-            <th scope="col">Course</th>
-            <th scope="col">Professor</th>
-            <th scope="col">Day</th>
-            <th scope="col">Time</th>
-            <th scope="col">Location</th>
+            <th width="10%">CRN</th>
+            <th width="5%">School</th>
+            <th width="40%">Course</th>
+            <th width="20%">Professor</th>
+            <th width="5%">Day</th>
+            <th width="10%">Time</th>
+            <th width="10%">Location</th>
         </tr>
     </thead>
     <tbody>
         <% if(data.length){
         for(var i = 0; i < data.length; i++){ %>
         <tr>
-            <th scope="row"><%= data[i]._id %></th>
+            <td><b><%= data[i]._id %></td>
             <td><%= data[i].school %></td>
             <td><%= data[i].course %></td>
             <td><%= data[i].professor %></td>
