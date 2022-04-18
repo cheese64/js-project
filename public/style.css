@@ -1,0 +1,27 @@
+form {
+    display: flex;
+    flex-direction: row;
+    background-color: #FFCC00;
+    border-color: #57150B;
+}
+input {
+    border-color: #57150B;
+}
+button {
+    background-color: #57150B;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+button:hover {
+    background-color: #972e1e;
+}
+table {border-collapse: collapse;}
+tr:nth-child(even) {background-color: #f2f2f2;}
+th {
+    background-color: #FFCC00;
+    color: #57150B;
+    text-align: left;
+}
