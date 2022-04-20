@@ -14,12 +14,28 @@ let userCol = require('./models/userSchema')
 
 app.set('view engine', 'ejs')
 
-// class list, need to implement user queries
-app.get('/classlist', async function (req, res) {
+app.use(express.static(__dirname + '/public'))
+
+app.get('/login', (req, res) => {
+    res.render('login')
+})
+
+app.get('/classlist', async (req, res) => {
+    let query = req.query;
+    // can't figure out how to add pattern matching for search queries (search value must be exact)
+    // "result[key] = " automatically adds quotes around entire value (unable to use $regex operator)
+    let conditions = Object.keys(query)
+    .reduce((result, key) => {
+        if (query[key]) {
+            result[key] = query[key]
+        }
+        return result
+    }, {})
+    console.log(conditions)
     try{
-        let result = await classCol.find()
-        console.log(result)
-        res.render('classlist', {data: result})
+        let find = await classCol.find(conditions) 
+        // some professor values are still stored as " STAFF" instead of "STAFF"
+        res.render('classlist', {data: find})
     } catch(e) {
         console.log(e.message)
     }

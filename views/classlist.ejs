@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Class List</title>
     <style>
         table {border-collapse: collapse;}
@@ -15,6 +16,17 @@
     </style>
 </head>
 <body>
+    <!-- <p><a href="/reviews">Reviews</a> <a href="/submit">Submit Review</a></p> -->
+    <form name="search" method="get">
+        <input type="number" name="_id" placeholder="CRN">
+        <input type="text" name="school" placeholder="School">
+        <input type="text" name="course" placeholder="Course">
+        <input type="text" name="professor" placeholder="Professor">
+        <input type="text" name="day" placeholder="Day">
+        <input type="number" name="start" placeholder="Start Time">
+        <input type="number" name="end" placeholder="End Time">
+        <button type="submit" style="padding: 8px 80px;">SEARCH</button>
+    </form>
     <table class="table">
     <thead>
         <tr>

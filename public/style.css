@@ -1,6 +1,10 @@
+html {
+    height: 100%;
+}
 form {
     display: flex;
     flex-direction: row;
+    justify-items: stretch;
     background-color: #FFCC00;
     border-color: #57150B;
 }
@@ -24,4 +28,12 @@ th {
     background-color: #FFCC00;
     color: #57150B;
     text-align: left;
+}
+body {
+    font-family: DejaVu Sans Mono, monospace;
+    font-size: 14px;
+    height: 100%;
+    margin: 0;
+    align-items: start;
+    color: #3a3a3a;
 }
