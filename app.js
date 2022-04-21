@@ -16,6 +16,15 @@ app.set('view engine', 'ejs')
 
 app.use(express.static(__dirname + '/public'))
 
+app.get('/', function (req, res){
+	if (!req.session.user){
+        res.redirect('/login')
+    }
+    else{
+        res.redirect('/classlist')
+	}
+})
+
 app.get('/login', (req, res) => {
     res.render('login')
 })
