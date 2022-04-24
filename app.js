@@ -29,6 +29,10 @@ app.get('/login', (req, res) => {
     res.render('login')
 })
 
+app.get('/register', (req, res) => {
+    res.render
+})
+
 app.get('/classlist', async (req, res) => {
     let query = req.query;
     // can't figure out how to add pattern matching for search queries (search value must be exact)
@@ -50,13 +54,28 @@ app.get('/classlist', async (req, res) => {
     }
 })
 
-// page not found
+app.param('prof', function(req, res, next, value){
+    console.log(`Request for professor ${value} reviews`);
+    next();
+})
+
+// app.get('/reviews/:prof' async (req, res) => {
+
+// })
+
+app.post('/login', (req, res) => {
+    
+})
+
+app.post('/register', (req, res) => {
+
+})
+
 app.use('*', function(req, res){
     res.writeHead(404);
     res.end(`<h1> ERROR 404. ${req.url} NOT FOUND</h1><br><br>`);
 });
 
-// listening on port 3000 & connect to database
 app.listen(3000, async () => {
     try{
 		await mongoose.connect('mongodb+srv://user:YVzW36G0g0E4Zg0e@capstoneproject.25frl.mongodb.net/jsproject?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true })

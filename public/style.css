@@ -22,7 +22,10 @@ button {
 button:hover {
     background-color: #972e1e;
 }
-table {border-collapse: collapse;}
+table {
+    border-collapse: collapse;
+    justify-items: stretch;
+}
 tr:nth-child(even) {background-color: #f2f2f2;}
 th {
     background-color: #FFCC00;

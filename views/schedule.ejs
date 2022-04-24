@@ -3,9 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Schedule</title>
 </head>
 <body>
-    
+    <h1>My Classes</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th width="10%">CRN</th>
+                <th width="5%">School</th>
+                <th width="40%">Course</th>
+                <th width="20%">Professor</th>
+                <th width="5%">Day</th>
+                <th width="10%">Time</th>
+                <th width="10%">Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if(data.length){
+            for(var i = 0; i < data.length; i++){ %>
+            <tr>
+                <td><b><%= data[i]._id %></td>
+                <td><%= data[i].school %></td>
+                <td><%= data[i].course %></td>
+                <td><%= data[i].professor %></td>
+                <td><%= data[i].day %></td>
+                <td><%= data[i].start %> - <%= data[i].end %></td>
+                <td><%= data[i].bldg %><%= data[i].room %></td>
+            </tr>
+            <% }
+            }else{ %>
+            <tr>
+                <td colspan="7">No classes found</td>
+            </tr>
+            <% } %>
+        </tbody>
+        </table>
+    </body>
+    </html>
 </body>
 </html>
