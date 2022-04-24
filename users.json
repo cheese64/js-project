@@ -1,0 +1,36 @@
+{"Users":
+[
+   {"_id": "cheese64",
+    "name": "Griffin Cheeseman",
+    "password": "password",
+    "rank": "student",
+    "schedule": [44292,40458]},
+
+    {"_id": "mayfie92",
+    "name": "Maggie Mayfield",
+    "password": "password1",
+    "rank": "student",
+    "schedule": [44346,44906,44357]},  
+
+    {"_id": "dun47",
+    "name": "Talia",
+    "password": "password2",
+    "rank": "student",
+    "schedule": [44917,43716]},
+
+    {"_id": "pale32",
+    "name": "Red Paleski",
+    "password": "password3",
+    "rank": "student",
+    "schedule": [44935,44934]},
+
+
+    {"_id": "nwan29",
+        "name": "Kingsley Nwankpah",
+        "password": "password4",
+        "rank": "student",
+        "schedule": [45472, 44313]}
+
+]
+}
+
