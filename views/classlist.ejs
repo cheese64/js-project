@@ -34,13 +34,13 @@
         <% if(data.length){
         for(var i = 0; i < data.length; i++){ %>
         <tr>
-            <td><b><%= data[i]._id %></td>
-            <td><%= data[i].school %></td>
-            <td><%= data[i].course %></td>
-            <td><%= data[i].professor %></td>
-            <td><%= data[i].day %></td>
-            <td><%= data[i].start %> - <%= data[i].end %></td>
-            <td><%= data[i].bldg %><%= data[i].room %></td>
+            <td width="10%"><b><%= data[i]._id %></td>
+            <td width="5%"><%= data[i].school %></td>
+            <td width="40%"><%= data[i].course %></td>
+            <td width="20%"><a href="/reviews/<%= data[i].professor %>"><%= data[i].professor %></a></td>
+            <td width="5%"><%= data[i].day %></td>
+            <td width="10%"><%= data[i].start %> - <%= data[i].end %></td>
+            <td width="10%"><%= data[i].bldg %><%= data[i].room %></td>
         </tr>
         <% }
         }else{ %>

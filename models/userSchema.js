@@ -10,5 +10,8 @@ const userSchema = new mongoose.Schema(
     }
 )
 
+userSchema.path('_id').required(true, 'Please enter a username')
+userSchema.path('password').required(true, 'Please enter a password')
+
 const userCol = mongoose.model('User', userSchema)
 module.exports = userCol
