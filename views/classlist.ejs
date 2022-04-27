@@ -5,15 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Class List</title>
-    <style>
-        table {border-collapse: collapse;}
-        tr:nth-child(even) {background-color: #f2f2f2;}
-        th {
-            background-color: #FFCC00;
-            color: #57150B;
-            text-align: left;
-        }
-    </style>
 </head>
 <body>
     <!-- <p><a href="/reviews">Reviews</a> <a href="/submit">Submit Review</a></p> -->
@@ -43,13 +34,13 @@
         <% if(data.length){
         for(var i = 0; i < data.length; i++){ %>
         <tr>
-            <td><b><%= data[i]._id %></td>
-            <td><%= data[i].school %></td>
-            <td><%= data[i].course %></td>
-            <td><%= data[i].professor %></td>
-            <td><%= data[i].day %></td>
-            <td><%= data[i].start %> - <%= data[i].end %></td>
-            <td><%= data[i].bldg %><%= data[i].room %></td>
+            <td width="10%"><b><%= data[i]._id %></td>
+            <td width="5%"><%= data[i].school %></td>
+            <td width="40%"><%= data[i].course %></td>
+            <td width="20%"><a href="/reviews/<%= data[i].professor %>"><%= data[i].professor %></a></td>
+            <td width="5%"><%= data[i].day %></td>
+            <td width="10%"><%= data[i].start %> - <%= data[i].end %></td>
+            <td width="10%"><%= data[i].bldg %><%= data[i].room %></td>
         </tr>
         <% }
         }else{ %>
