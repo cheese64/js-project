@@ -1,0 +1,15 @@
+html {
+    height: 100%;
+}
+
+body {
+    font-family: DejaVu Sans Mono, monospace;
+    font-size: 14px;
+    height: 100%;
+    margin: 0;
+    display: grid;
+    justify-items: normal;
+    align-items: flex-start;
+    background-color: #57150B;
+    color: #3a3a3a;
+}
