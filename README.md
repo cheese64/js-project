@@ -7,4 +7,5 @@ Welcome to our website for searching courses and displaying reviews. These revie
 You may either register or use the below login to preview our website.
 
 User:cheese64
+
 Password:password
