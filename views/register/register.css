@@ -24,17 +24,17 @@ body {
   box-shadow: 0px 0px 5px 2px black;
 }
 
-#login-form {
+#register-form {
   align-self: flex-start;
   display: grid;
 }
 
-.login-form-field::placeholder {
+.register-form-field::placeholder {
   font-family: DejaVu Sans Mono, monospace;
   color: #3a3a3a;
 }
 
-.login-form-field {
+.register-form-field {
   font-family: DejaVu Sans Mono, monospace;
   background-color: #f2f2f2;
   border: none;
@@ -43,7 +43,7 @@ body {
   padding: 0px 0px 5px 5px;
 }
 
-#login-submit {
+#register-submit {
   font-family: DejaVu Sans Mono, monospace;
   width: 100%;
   padding: 7px;
