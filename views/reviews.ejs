@@ -6,6 +6,12 @@
     <title>Reviews</title>
 </head>
 <body>
-
+    <% if(data.length){
+        for(var i = 0; i < data.length; i++){ %>
+        <p><%= data[i].professor %></p>
+        <% }
+        }else{ %>
+        <p>No Reviews found</p>
+        <% } %>
 </body>
 </html>
