@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
     <title>Reviews</title>
 </head>
 <body>
@@ -14,9 +15,18 @@
     </div>
     <% if(data.length){
         for(var i = 0; i < data.length; i++){ %>
-        <p><%= data[i].professor %></p>
+            <span class="heading">User Rating</span>
+
+            <p><b>Professor:</b><%= data[i].professor %></p>
+            <p><b>Course:</b><%= data[i].course %></p>
+            <p><b>Difficulty:</b><%= data[i].difficulty %></p>
+            <p><b>Professor:</b><%= data[i].professor %></p>
+            <p><b>Would Take Again:</b><%= data[i].take_again %></p>
+            <p><b>Grade:</b><%= data[i].grade %></p>
+            <p><b>Rating:</b><%= data[i].rating %></p>
+
         <% }
-        }else{ %>
+         }else{ %>
         <p>No Reviews found</p>
         <% } %>
 </body>
