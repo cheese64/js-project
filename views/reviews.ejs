@@ -6,6 +6,12 @@
     <title>Reviews</title>
 </head>
 <body>
+    <div class="nav">
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+        <a href="/classlist">Classes</a>
+        <a href="/submit">Submit Review</a>
+    </div>
     <% if(data.length){
         for(var i = 0; i < data.length; i++){ %>
         <p><%= data[i].professor %></p>

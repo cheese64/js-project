@@ -10,6 +10,12 @@
                     href="submit.css">
        </head>
        <body>
+              <div class="nav">
+                     <a href="/login">Login</a>
+                     <a href="/register">Register</a>
+                     <a href="/classlist">Classes</a>
+                     <a href="/submit">Submit Review</a>
+              </div>
               <main id="main">
                      <h1 id="header">
                             Submit a Review</h1>
@@ -31,43 +37,11 @@
                                    id="course-field"
                                    class="submit-form-field">
 
-                            <label class="submit-prompts">
+                            <label for="difficulty" 
+                                   class="submit-prompts">
                                    How difficult was this course?</label>
 
-                            <input type="radio"
-                                   name="difficulty"
-                                   value="1"
-                                   id="difficulty-1">
-                            <label for="difficulty-1"
-                                   class="radio-labels">1 - Very easy</label>
-
-                            <input type="radio"
-                                   name="difficulty"
-                                   value="2"
-                                   id="difficulty-2">
-                            <label for="difficulty-2"
-                                   class="radio-labels">2 - Easy</label>
-
-                            <input type="radio"
-                                   name="difficulty"
-                                   value="3"
-                                   id="difficulty-3">
-                            <label for="difficulty-3"
-                                   class="radio-labels">3 - Somewhat difficult</label>
-
-                            <input type="radio"
-                                   name="difficulty"
-                                   value="4"
-                                   id="difficulty-4">
-                            <label for="difficulty-4"
-                                   class="radio-labels">4 - Moderately difficult</label>
-
-                            <input type="radio"
-                                   name="difficulty"
-                                   value="5"
-                                   id="difficulty-5">
-                            <label for="difficulty-5"
-                                   class="radio-labels">5 - Very difficult</label>
+                            <input type="range" id="difficulty" name="difficulty" min="1" max="5">
 
                             <label class="submit-prompts">
                                    Would you take this course again?</label>
@@ -85,7 +59,7 @@
                                    id="would-not-take-again">
                             <label for="would-not-take-again"
                                    class="radio-labels">No</label>
-                            <br>
+                            <br><br><br>
                             <input type="submit"
                                    value="Submit Review"
                                    id="submit-button">

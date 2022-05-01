@@ -140,6 +140,7 @@ app.post('/submit', express.urlencoded({extended:false}), async (req, res, next)
     try {
         let newReview = new reviewCol({professor: req.body.professor, course: req.body.course, take_again: req.body.takeagain, grade: req.body.grade})
         await newReview.save()
+        res.redirect('/classlist')
     } catch(e) {
         console.log(e.message)
     }
