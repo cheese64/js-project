@@ -96,8 +96,7 @@ app.get('/submit', async (req, res) => {
     if (!req.session.user) {
         res.redirect('/login')
     } else {
-        let result = await classCol.find().distinct('professor')
-        res.render('submit', {professors: result})
+        res.render('submit')
     }
 })
 
