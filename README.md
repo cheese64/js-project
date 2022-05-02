@@ -8,6 +8,6 @@ The data used for this project is available to the public and was obtained from 
 
 You may either register or use the below login to preview our website.
 
-User:cheese64
+User: cheese64
 
-Password:password
+Password: password

@@ -19,6 +19,7 @@ app.set('view engine', 'ejs')
 
 app.use(express.static(__dirname + '/public'))
 
+// code adapted from Jacob Levy's activity server repository
 app.use(session({
 	secret:'shhhhh',
 	saveUninitialized: false,
@@ -57,7 +58,7 @@ app.get('/classlist', async (req, res) => {
         let query = req.query;
         // can't figure out how to add pattern matching for search queries (search value must be exact)
         // "result[key] = " automatically adds quotes around entire value (unable to use $regex operator)
-        let conditions = Object.keys(query)
+        let conditions = Object.keys(query) 
         .reduce((result, key) => {
             if (query[key]) {
                 result[key] = query[key]
@@ -91,7 +92,7 @@ app.get('/reviews/:prof', async (req, res) => {
     }
 })
 
-app.get('/submit', (req, res) => {
+app.get('/submit', async (req, res) => {
     if (!req.session.user) {
         res.redirect('/login')
     } else {
@@ -99,6 +100,7 @@ app.get('/submit', (req, res) => {
     }
 })
 
+// code adapted from Jacob Levy's activity server repository
 app.post('/login', express.urlencoded({extended:false}), async (req, res, next)=>{
 	let untrusted= {user: req.body.userName, password: req.body.pass}; // need to implement genHash function for password
 	console.log(untrusted.password)
@@ -117,20 +119,37 @@ app.post('/login', express.urlencoded({extended:false}), async (req, res, next)=
 	}
 })
 
-app.post('/register', async (req, res) => {
-
+// code adapted from Jacob Levy's activity server repository
+app.post('/register', express.urlencoded({extended:false}), async (req, res, next) => {
+    if (req.body.user.split(/[;:,-\s ]+/).length > 1) {
+        res.render('register', {msg: "Usernames must be one word"})
+    }
+    if (req.body.password.toString() != req.body.confirm.toString()) {
+        res.render('register', {msg: "Passwords must match"});
+    }
+    try {
+        let newUser = new userCol({_id: req.body.user, name: req.body.name, password: req.body.password, rank: req.body.rank})
+        await newUser.save()
+        res.redirect('/login')
+    } catch(e) {
+        console.log(e.message)
+    }
 })
 
-app.post('/submit', async (req, res) => { 
-
+app.post('/submit', express.urlencoded({extended:false}), async (req, res, next) => {
+    try {
+        let newReview = new reviewCol({professor: req.body.professor, course: req.body.course, difficulty: req.body.difficulty, take_again: req.body.takeagain, grade: req.body.grade, rating: req.body.rating})
+        console.log(newReview)
+        await newReview.save()
+        res.redirect('/classlist')
+    } catch(e) {
+        console.log(e.message)
+    }
 })
 
 app.use('*', function(req, res){
     res.writeHead(404);
     res.end(`<h1> ERROR 404. ${req.url} NOT FOUND</h1><br><br>`);
-})
-app.use((err, req, res, next)=>{
-	res.status(500).render('error', {message: err.message})
 })
 
 app.listen(3000, async () => {

@@ -1,0 +1,73 @@
+html {
+    height: 100%;
+  }
+  
+  body {
+    height: 100%;
+    margin: 0;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: #57150B;
+    color: #3a3a3a;
+  }
+  
+  /* input[id^="difficulty-"]:last-of-type {
+    margin-bottom: 50px;
+  } */
+  
+  #main {
+    font-family: DejaVu Sans Mono, monospace;
+    width: 50%;
+    height: 80%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    background-color: #f2f2f2;
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px 2px black;
+  }
+  
+  #submit-form {
+    align-self: flex-start;
+    display: grid;
+    /* justify-items: center; */
+  }
+  
+  .submit-form-field::placeholder {
+    font-family: DejaVu Sans Mono, monospace;
+    color: #3a3a3a;
+  }
+  
+  .submit-form-field {
+    font-family: DejaVu Sans Mono, monospace;
+    background-color: #f2f2f2;
+    border: none;
+    border-bottom: thin solid #3a3a3a;
+    margin-bottom: 10px;
+    padding: 0px 0px 5px 5px;
+  }
+  
+  .submit-prompts {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .difficulty-labels{
+    font-weight: bold;
+    display: inline;
+  }
+  
+  #submit-button {
+    font-family: DejaVu Sans Mono, monospace;
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    color: #FFCC00;
+    font-weight: bold;
+    background-color: #3a3a3a;
+    cursor: pointer;
+    outline: none;
+  }

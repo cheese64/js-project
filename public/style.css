@@ -40,3 +40,20 @@ body {
     align-items: start;
     color: #3a3a3a;
 }
+.nav {
+    background-color: #FFCC00;
+    overflow: hidden;
+}
+.nav a {
+    font-size: 16px;
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+.nav a:hover {
+    background-color: #972e1e;
+    color: white;
+}
