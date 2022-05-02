@@ -14,7 +14,7 @@
                      <h1 id="header">
                             Submit a Review</h1>
 
-                     <form id="submit-form">
+                     <form id="submit-form" method="post">
                             <label for="professor" 
                                    class ="submit-prompts">
                                    Professor</label>
@@ -33,28 +33,28 @@
 
                             <label for="rating" 
                                    class="submit-prompts">
-                                   What is your overall rating for this course?</label>
+                                   What is your overall rating for this course? (1 - 5)</label>
 
-                            <input type="range" id="rating" name="rating" min="1.0" max="5.0">
+                            <input type="number" id="rating" name="rating" min="1" max="5" step="0.1">
 
                             <label for="difficulty" 
                                    class="submit-prompts">
-                                   How difficult was this course?</label>
+                                   How difficult was this course? (1 - 5)</label>
 
-                            <input type="range" id="difficulty" name="difficulty" min="1.0" max="5.0">
+                            <input type="number" id="difficulty" name="difficulty" min="1" max="5" step="0.1">
 
                             <label class="submit-prompts">
                                    Would you take this course again?</label>
 
                             <input type="radio"
-                                   name="take-again"
+                                   name="takeagain"
                                    value="yes"
                                    id="would-take-again">
                             <label for="would-take-again"
                                    class="radio-labels">Yes</label>
 
                             <input type="radio"
-                                   name="take-again"
+                                   name="takeagain"
                                    value="no"
                                    id="would-not-take-again">
                             <label for="would-not-take-again"
@@ -82,7 +82,7 @@
                             </select>
                             <br><br><br>
                             <input type="submit"
-                                   value="Submit Review"
+                                   value="Submit"
                                    id="submit-button">
                      </form>
               </main>

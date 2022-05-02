@@ -138,7 +138,8 @@ app.post('/register', express.urlencoded({extended:false}), async (req, res, nex
 
 app.post('/submit', express.urlencoded({extended:false}), async (req, res, next) => {
     try {
-        let newReview = new reviewCol({professor: req.body.professor, course: req.body.course, take_again: req.body.takeagain, grade: req.body.grade})
+        let newReview = new reviewCol({professor: req.body.professor, course: req.body.course, difficulty: req.body.difficulty, take_again: req.body.takeagain, grade: req.body.grade, rating: req.body.rating})
+        console.log(newReview)
         await newReview.save()
         res.redirect('/classlist')
     } catch(e) {
