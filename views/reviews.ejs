@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
+    <script type="text/javascript" src="/gradeavg.js"></script>
     <title>Reviews</title>
 </head>
 <body>
@@ -13,16 +14,18 @@
         <a href="/classlist">Classes</a>
         <a href="/submit">Submit Review</a>
     </div>
-    <% if(data.length){
-        for(var i = 0; i < data.length; i++){ %>
-            <span class="heading">User Rating</span>
+    <% if(data.length){ %>
+        <button onclick="avgGrade()">Calculate Average</button>
+        <p>Average Grade: <span id="avg"></span></p>
+        <% for(var i = 0; i < data.length; i++){ %>
+            <h2>User Rating <%= i+1 %></h2>
 
             <p><b>Professor:</b><%= data[i].professor %></p>
             <p><b>Course:</b><%= data[i].course %></p>
             <p><b>Difficulty:</b><%= data[i].difficulty %></p>
             <p><b>Professor:</b><%= data[i].professor %></p>
             <p><b>Would Take Again:</b><%= data[i].take_again %></p>
-            <p><b>Grade:</b><%= data[i].grade %></p>
+            <p><b>Grade:</b><span class="grade"><%= data[i].grade %></span></p>
             <p><b>Rating:</b><%= data[i].rating %></p>
 
         <% }
