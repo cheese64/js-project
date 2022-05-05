@@ -1,5 +1,16 @@
+//Red Paleski
+//This version of the code is for testing purposes, to show that the function can receive and
+//output a value as intended, so you just need to use node gradeavg.js to run it. We tried
+//not having the pre-built array (Since its name was the same as the parameter for the function)
+//and just taking in the grades received from the HTML/EJS docs, but this proved to be an issue.
+//It ended up getting cut due to it not being able to display on the HTML/EJS doc.
+//The code for finding the mode was also cut due to time, however it was not functioning as 
+//intended when it was cut, so it's not included in the final project.
+
+var grades = ['A+', 'B+', 'A', 'F', 'B+', 'B+', 'C', 'B+'];
+
 function avgGrade(grades){
-//var grades = ['A+', 'B+', 'A', 'F', 'B+', 'C', 'B+'];
+
 var avgArray = [];
 var mean;
 var avgLetter ="";
@@ -60,8 +71,7 @@ var avgLetter ="";
    
     //based on code from https://poopcode.com/calculate-the-average-of-an-array-of-numbers-in-javascript/#:~:text=To%20calculate%20the%20average%20of,reduce()%20for%20this%20purpose.
     // for next two lines of code
-
-
+    
     const average = avgArray => avgArray.reduce((a,b) => a + b, 0) / avgArray.length;
 
     mean = average(avgArray).toFixed(0);
@@ -114,8 +124,9 @@ var avgLetter ="";
     
     //console.log(avgArray);
     //console.log(mean);
-    //console.log(avgLetter);
+    console.log(avgLetter);
     return avgLetter;
 
 
 }
+avgGrade(grades);
